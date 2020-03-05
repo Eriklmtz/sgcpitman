@@ -1,0 +1,18 @@
+@media print {
+  .navbar-nav,.sticky-footer,.btn{
+  	display: none;
+  }
+  #frm-bus{
+    display: none;
+    visibility: hidden;
+  }
+  body{
+  	background: #FFF;
+  	color:#000;
+  }
+  .table{
+  	color: #000;
+  }
+ 
+ 
+}
