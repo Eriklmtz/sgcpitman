@@ -104,7 +104,7 @@
                             @endphp
                             {{-- checar la condicion siguiente y hacerla mas general! --}}
                             <td> 
-                            	@if (auth()->user()->email === "admin"||auth()->user()->email === "erik")
+                            	{{-- @if (auth()->user()->tipo === "admin"||auth()->user()->email === "erik") --}}
                                     @if ($e->estado == 0)
                                         <form action="{{ route("egreso.update",$e->id)."?fi=".request()->fi."&ft=".request()->ft."&tipo=".request()->tipo }}" method="POST" onsubmit="return confirm('¡El egreso se cambiara a pagado! ¿Desea continuar?')">
                                         {{ csrf_field() }}{!! method_field("PUT") !!}
@@ -112,13 +112,13 @@
                                     </form>    
                                     @endif
                                     
-                                    @if (auth()->user()->email === "admin")
+                                    @if (auth()->user()->tipo === "admin")
                                         <form action="{{ route("egreso.destroy",$e->id)."?fi=".request()->fi."&ft=".request()->ft }}" method="POST" onsubmit="return confirm('¿Desea eliminar el egreso?')">
                                             {{ csrf_field() }}{!! method_field("DELETE") !!}
                                             <button type="submit" class="btn btn-danger">Eliminar</button>
                                         </form>
                                     @endif
-								@endif
+								{{-- @endif --}}
 
                             </td>
                         </tr>
