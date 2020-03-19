@@ -36,6 +36,19 @@
                     </div>
                 </div>
 
+                <div class="form-group{{ $errors->has('escuela') ? ' has-error' : '' }}">
+                    <label for="nom" class="control-label">Escuela:</label>
+                    <div class="">
+                        <input id="escuela" type="text" class="form-control" name="escuela" value="{{ old('escuela') }}" required autofocus>
+
+                        @if ($errors->has('escuela'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('escuela') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                </div>
+
                 <div class="form-group{{ $errors->has('status') ? ' has-error' : '' }}">
                         <label for="status" class="control-label">Estatus:</label>
 

@@ -49,6 +49,7 @@ class EspecialidadeController extends Controller
 
             $s->nombre = $r->input("nombre");
             $s->descripcion= $r->input("descripcion");
+            $s->escuela= $r->input("escuela");
             $s->status = $r->input("status");
 
             $s->save();
