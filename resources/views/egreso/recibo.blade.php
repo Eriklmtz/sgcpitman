@@ -60,7 +60,7 @@
             <tbody>
                     <tr>
                         <td>{{ $x++ }}</td>
-                        <td>{{ $egreso->Folio}}</td>
+                        <td>{{ $egreso->id}}</td>
                         <td>{{ $egreso->descripcion }}</td>
                         <td>${{ $egreso->monto }}</td>
     
