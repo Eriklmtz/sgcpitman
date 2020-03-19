@@ -20,7 +20,7 @@ class MatriculaController extends Controller
     {
         $this->middleware('auth');
     }
-    public function index()
+    public function index($e = "")
     {
         $matriculas = Matricula::all();
         $titulo = "Matriculas";
