@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-// use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Session;
+
 
 use App\Pago;
 use Illuminate\Http\Request;
