@@ -58,7 +58,7 @@ class PagoController extends Controller
     public function create()
     {
         $matriculas = Matricula::with("especialidade","alumno")->get();
-        $servicios = Servicio::all();  ///////18-03-2020  estaba comentado
+        //$servicios = Servicio::all();  ///////18-03-2020  estaba comentado
         //return view("factura.indexCliente",compact("facturas"));
         //return session("carrito");
         return view("venta.create",compact("matriculas","servicios"));
