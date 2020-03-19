@@ -52,7 +52,7 @@ class AlumnoController extends Controller
             $s->direccion = $r->input("direccion");
             //$s->status = $r->input("status");
             $s->alergia = $r->input("alergia");
-            $s->num_emergencia = $r->input("tel-emergencia");
+            $s->tel_emergencia = $r->input("tel-emergencia");
 
             $s->save();
             $e = "ok-create";
