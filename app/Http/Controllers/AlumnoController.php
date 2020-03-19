@@ -43,14 +43,14 @@ class AlumnoController extends Controller
     {
         try{
             $s = new Alumno;
-            $s->nctrl = $r->input("matricula");
+            $s->id = $r->input("matricula");
             $s->nombre = $r->input("nombre");
-            $s->aPaterno= $r->input("apaterno");
-            $s->aMaterno = $r->input("amaterno");
+            $s->apaterno= $r->input("apaterno");
+            $s->amaterno = $r->input("amaterno");
             $s->correo = $r->input("correo");
             $s->telefono = $r->input("telefono");
             $s->direccion = $r->input("direccion");
-            $s->status = $r->input("status");
+            //$s->status = $r->input("status");
             $s->alergia = $r->input("alergia");
             $s->num_emergencia = $r->input("tel-emergencia");
 

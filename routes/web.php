@@ -29,9 +29,9 @@ Route::resource("alumno","AlumnoController");
 Route::resource("home","AlumnoController");
 Route::resource("crearalumno","AlumnoController");
 Route::resource("venta","VentaController");
-Route::resource("especialidad","especialidadeController");
-Route::resource("matricula","matriculaController");
-Route::resource("egreso","egresoController");
+Route::resource("especialidad","EspecialidadeController");
+Route::resource("matricula","MatriculaController");
+Route::resource("egreso","EgresoController");
 //Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post("buscar/alumnos","AlumnoController@alumnosAjax")->name("alumnos.alumnosAjax");

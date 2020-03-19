@@ -140,7 +140,7 @@
                     </div>
                 </div>
 
-                <div class="form-group{{ $errors->has('status') ? ' has-error' : '' }}">
+                {{-- <div class="form-group{{ $errors->has('status') ? ' has-error' : '' }}">
                         <label for="status" class="control-label">Estatus:</label>
 
                         <div class="">
@@ -151,7 +151,7 @@
                                 </span>
                             @endif
                         </div>
-                    </div>
+                    </div> --}}
 
                 {{-- <div class="form-group{{ $errors->has('status') ? ' has-error' : '' }}">
                     <label for="status" class="control-label">status:</label>
