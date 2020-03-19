@@ -90,7 +90,7 @@ class PagoController extends Controller
                 ];
                 $p = new Pago;
                 $p->user_id = auth()->user()->id;
-                $p->fecha_cobro = date("d-m-Y");
+                $p->fecha_cobro = date("Y-m-d");
                 $p->matricula = $carrito["alumno"];
                 $p->tipo = $carrito["tipo"];
 

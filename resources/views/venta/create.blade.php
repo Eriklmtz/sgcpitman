@@ -8,7 +8,7 @@
         $carrito = session("carrito");
         $al= $carrito["alumno"];
         $tipo = $carrito["tipo"];
-        echo $tipo;
+        //echo $tipo;
     }else
         $al= "";
 
