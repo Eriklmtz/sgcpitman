@@ -74,7 +74,7 @@ class PagoController extends Controller
     public function store(Request $request)
     {
         try{
-            $carrito = session("carrito");
+            $carrito = Session("carrito");
 
             $lista = [];
 
@@ -95,7 +95,7 @@ class PagoController extends Controller
 
                 $p->save();
                 $p->servicios()->attach($lista);
-                session(["carrito"=>null]);//////////////Hasta aquí finaliza el insertado
+                Session(["carrito"=>null]);//////////////Hasta aquí finaliza el insertado
                 return redirect(route("pago.show",$p));
         }catch(Exception $e){
             Session::flash('msj', ["msj"=>"Error al realizar la operacion","clase"=>"danger"]);
@@ -158,9 +158,9 @@ class PagoController extends Controller
 
     public function tablaVirtual(Request $r){
 
-        if(empty(session("carrito")))
-            session( ["carrito" => ["alumno"=>$r->alumno,"tipo"=>$r->tipo,"tabla"=>[] ]] );///////////////////tipop  a   tipo
-        $carrito = session("carrito");
+        if(empty(Session("carrito")))
+            Session( ["carrito" => ["alumno"=>$r->alumno,"tipo"=>$r->tipo,"tabla"=>[] ]] );///////////////////tipop  a   tipo
+        $carrito = Session("carrito");
         $carrito["tipo"] = $r->tipo;/////////////////////////////////tipop  a   tipo
         if(array_key_exists($r->id, $carrito["tabla"])){
             $carrito["tabla"][$r->id]["cantidad"] +=  $r->cantidad;
@@ -168,28 +168,28 @@ class PagoController extends Controller
         }else
             $carrito["tabla"][$r->id] = ["id"=>$r->id,"cantidad"=>$r->cantidad,"concepto"=>$r->concepto,"precio"=>$r->precio,"descripcion"=>$r->descripcion,"fecha"=>$r->fecha,"descuento" => $r->descuento];
 
-        session(["carrito"=>$carrito]);
+        Session(["carrito"=>$carrito]);
         return $this->mostrar_tabla();
 
     }
 
     public function mostrar_tabla(){
-        $carrito = session("carrito");
+        $carrito = Session("carrito");
         return view("venta.tablaVirtual",compact("carrito"));
     }
 
     public function eliminaServCarrito($id){
-        $carrito = session("carrito");
+        $carrito = Session("carrito");
         //dd($carrito);
         unset($carrito["tabla"][$id]); //UNSET se usa Para destruir elementos en PHP
         if(count($carrito["tabla"]) == 0)
             $carrito = [];
-        session(["carrito"=>$carrito]);
+        Session(["carrito"=>$carrito]);
         return $this->mostrar_tabla();
     }
 
     public function cancelarCarrito(){
-        session(["carrito"=>[]]);
+        Session(["carrito"=>[]]);
         return $this->mostrar_tabla();
     }
 
