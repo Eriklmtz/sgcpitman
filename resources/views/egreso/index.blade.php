@@ -73,7 +73,7 @@
                         <th>#</th>
                         <th>Fecha</th>
                         <th>Deudor</th>
-                        <th>Descripcion</th>
+                        <th>Observación</th>
                         <th>Monto</th>
                         <th>Estado</th>
                         <th>Usuario</th>

@@ -24,7 +24,7 @@
                 </div>
 
                 <div class="form-group{{ $errors->has('descripcion') ? ' has-error' : '' }}">
-                    <label for="nom" class="control-label">Descripción:</label>
+                    <label for="descripcion" class="control-label">Descripción:</label>
                     <div class="">
                         <input id="descripcion" type="text" class="form-control" name="descripcion" value="{{ old('descripcion') }}" required autofocus>
 
@@ -37,7 +37,7 @@
                 </div>
 
                 <div class="form-group{{ $errors->has('escuela') ? ' has-error' : '' }}">
-                    <label for="nom" class="control-label">Escuela:</label>
+                    <label for="escuela" class="control-label">Escuela:</label>
                     <div class="">
                         <input id="escuela" type="text" class="form-control" name="escuela" value="{{ old('escuela') }}" required autofocus>
 

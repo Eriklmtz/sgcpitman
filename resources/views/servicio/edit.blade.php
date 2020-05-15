@@ -64,14 +64,12 @@
                         </div>
                     </div>
 
-                    <div class="form-group{{ $errors->has('descripcion') ? ' has-error' : '' }}">
+                    {{-- <div class="form-group{{ $errors->has('descripcion') ? ' has-error' : '' }}">
                         <label for="descripcion" class="control-label">Descripción:</label>
                         <div class="">
                             <textarea required="" name="descripcion" id="descripcion" class="form-control" >
                             {{$serv->descripcion }}
                             </textarea>
-
-                            {{-- <input id="descripcion" type="text" class="form-control" name="descripcion" value="{{$serv->descripcion }}" required autofocus> --}}
 
                             @if ($errors->has('descripcion'))
                                 <span class="help-block">
@@ -79,7 +77,7 @@
                                 </span>
                             @endif
                         </div>
-                    </div>
+                    </div> --}}
 
                     <div class="form-group">
                         <div class="">

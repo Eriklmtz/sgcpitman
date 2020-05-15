@@ -145,7 +145,7 @@
                 </div>
                 <div class="col-md-8">
                     <div class="form-group{{ $errors->has('descripcion') ? ' has-error' : '' }}">
-                        <label for="nom" class="control-label">Descripción:</label>
+                        <label for="nom" class="control-label">Observación:</label>
                         <div class="">
                             <textarea id="descripcion" type="text" class="form-control" name="descripcion">{{ old('descripcion') }}</textarea>
 

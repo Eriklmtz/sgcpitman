@@ -13,6 +13,7 @@
                           <input type="date" class="form-control bg-light border-0 small" name="ft" placeholder="Fecha de Fin" aria-label="Buscar" aria-describedby="basic-addon2" id="ft" autofocus="" value="{{ request()->ft }}" required>
             
                           <select class="form-control bg-light border-0 small" name="tipo" id="tipo">
+                            <option value="general">General</option>
                             <option value="efectivo">Efectivo</option>
                             <option value="deposito">Deposito</option>
                           </select>
@@ -25,10 +26,10 @@
                         </div>
                 </form>
             </div>
-            <div class="col-md-2">
+            {{-- <div class="col-md-2">
                 <button type="button" class="btn btn-outline-primary">
                     <i class="fas fa-fw fa-print " > </i></button>
-            </div>
+            </div> --}}
         </div>
     </div>
 
@@ -37,7 +38,7 @@
     
 
     <br><br> <br><br>
-    <?php $x = 1; $total = 0; ?>
+    <?php $x = 1; $total = 0; $totalDeposito = 0; $totalEfectivo = 0; ?>
 
 
         @if (!empty($pagos) )
@@ -46,7 +47,7 @@
                 <div class="row">
                     <div colspan="2" class="col-md-2"></div>
                     <div class="col-md-8">
-                        <h3 align  = "center">Reporte de Cobros en
+                        <h3 align  = "center">Corte de caja en
                             {{ ucwords(request()->tipo) }}
                             @if (request()->fi === request()->ft)
                                 {{ "de la fecha ".request()->fi }}
@@ -91,8 +92,13 @@
                                             $subtotal += ($s->pivot->cantidad * $s->pivot->precio_unitario) - $s->pivot->descuento;
 
                                         }
-                                        if($p->status!=0)
+                                        if($p->status!=0){
                                             $total += $subtotal;
+                                            if($p->tipo=='Deposito')
+                                                $totalDeposito+=$subtotal;
+                                            else
+                                                $totalEfectivo+=$subtotal;
+                                        }
                                         echo "$$subtotal";
                                     @endphp
 
@@ -116,10 +122,22 @@
                             </tr>
                         @endforeach
                         <tr>
+                            <td colspan="6" align="right"><b>Total en Efectivo :</b></td>
+                            <td>${{ $totalEfectivo }}</td>
+                            <td></td>
+                       </tr>
+                       
+                       <tr>
+                            <td colspan="6" align="right"><b>Total en Depósito:</b></td>
+                            <td>${{ $totalDeposito }}</td>
+                            <td></td>
+
+                        </tr>
+
+                        <tr>
                              <td colspan="6" align="right"><b>Total:</b></td>
                              <td>${{ $total }}</td>
                              <td></td>
-
                         </tr>
                     </tbody>
                 </table>

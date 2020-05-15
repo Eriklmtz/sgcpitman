@@ -14,7 +14,7 @@ class Pago extends Model
         #withPivote se utiliza para manejar campos extras en las relaciones  M:M
         # [ Modelo relacional,              ]
         return $this->belongsToMany(Servicio::class,
-        "pago_servicio")->withPivot("cantidad","precio_unitario","descuento", "fecha_pago_servicio","descripcion");
+    "pago_servicio")->withPivot("cantidad","precio_unitario","descuento", "fecha_pago_servicio","descripcion");
     }
 
     public function alumno()

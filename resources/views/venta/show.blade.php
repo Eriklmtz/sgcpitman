@@ -67,7 +67,7 @@
                 <th>Cantidad</th>
                 <th>Descuento</th>
                 <th>Fecha Correspondiente</th>
-                <th>Descripción</th>
+                <th>Observación</th>
                 <th>SubTotal</th>
 
 			</tr>

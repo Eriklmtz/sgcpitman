@@ -17,20 +17,6 @@
             <form class="" method="POST" action="{{ route('alumno.store') }}" enctype="multipart/form-data">
                 {{ csrf_field() }}
 
-
-                <div class="form-group{{ $errors->has('matricula') ? ' has-error' : '' }}">
-                    <label for="nom" class="control-label">Matrícula:</label>
-                    <div class="">
-                        <input id="matricula" type="text" class="form-control" name="matricula" value="{{ old('matricula') }}" required autofocus>
-
-                        @if ($errors->has('matricula'))
-                            <span class="help-block">
-                                <strong>{{ $errors->first('matricula') }}</strong>
-                            </span>
-                        @endif
-                    </div>
-                </div>
-
                 <div class="form-group{{ $errors->has('nom') ? ' has-error' : '' }}">
                     <label for="nom" class="control-label">Nombre:</label>
                     <div class="">

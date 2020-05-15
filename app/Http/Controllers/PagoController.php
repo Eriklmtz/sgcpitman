@@ -27,29 +27,48 @@ class PagoController extends Controller
 
     }
 
-    public function index(Request $r){
+    // public function index(Request $r){
+    //     try{
+    //         $alumno = Matricula::findOrFail($r->buscar);
+    //         //$alumno = Alumno::findOrFail($r->buscar);
+    //     }catch(Exception $e){
+    //         $alumno = [];
+    //     }
 
+    //     return view("venta.index",compact("alumno"));
+    // }
+    
+
+    public function index(Request $r){
         try{
             $alumno = Matricula::findOrFail($r->buscar);
+            
         }catch(Exception $e){
             $alumno = [];
-
         }
 
         return view("venta.index",compact("alumno"));
-
     }
     
+
+
+
+
     public function index2(){
 
         $fi = empty(request()->fi)?"":request()->fi;
         $ft = empty(request()->ft)?"":request()->ft;
         $tipo = empty(request()->tipo)?"":request()->tipo;
         $pagos=[];
-        $pagos = Pago::with("servicios","alumno")->where("fecha_cobro",">=",$fi)->where("fecha_cobro","<=",$ft)->where("tipo",$tipo)->get();
+        //echo($tipo);
+        if($tipo=='general')
+             $pagos = Pago::with("servicios","alumno")->where("fecha_cobro",">=",$fi)->where("fecha_cobro","<=",$ft)->get();
+        else
+            $pagos = Pago::with("servicios","alumno")->where("fecha_cobro",">=",$fi)->where("fecha_cobro","<=",$ft)->where("tipo",$tipo)->get();
         return view("venta.index2",compact("pagos"));
-
     }
+
+   
 
     /**
      * Show the form for creating a new resource.

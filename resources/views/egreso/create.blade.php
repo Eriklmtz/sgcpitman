@@ -47,7 +47,7 @@
 
 
                 <div class="form-group row">
-                    <label for="descripcion" class="col-md-4 col-form-label text-md-right">{{ __('Descripción:') }}</label>
+                    <label for="descripcion" class="col-md-4 col-form-label text-md-right">{{ __('Observación:') }}</label>
 
                     <div class="col-md-8">
                         <textarea required="" name="descripcion" id="descripcion" class="form-control">
